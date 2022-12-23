@@ -1,0 +1,16 @@
+<h4> <%= @assignment.task %> <span class="badge rounded-pill text-bg-primary mx-3"><%= @assignment.status %></span></h4>
+<p> <b>Estimated Time:</b> <%= @assignment.due_date.to_fs(:long_ordinal) %> </p>
+<p><b>Story Owner: </b> <%= @assignment.task_owner %> </p>
+<p><b>Reporting To:</b> <%= @assignment.assignee %> </p>
+<p> <b>Created: </b> <%= @assignment.created_at.to_fs(:long_ordinal) %> </p>
+<p><b>Updated: </b><%= @assignment.updated_at.to_fs(:long_ordinal) %> </p>
+<b>ACs:</b>
+<div class="container">
+  <div class="card" style="background-color: #E2E2E2">
+    <div class="card-body">
+      <p> <%= @assignment.description %> </p>
+      <%= link_to 'Edit', edit_project_assignment_path(@assignment.project_id,@assignment), class:"btn btn-secondary" %>
+      <%= link_to 'Destroy', [@assignment.project, @assignment], class:"btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    </div>
+  </div>
+</div>

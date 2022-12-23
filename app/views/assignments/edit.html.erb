@@ -1,0 +1,60 @@
+<h1>Edit Assignment</h1>
+
+<%= form_with model: @assignment, url: project_assignment_path do |form| %>
+  <div>
+    <%= form.label :task %><br>
+    <%= form.text_field :task, class:"form-control" %>
+    <% @assignment.errors.full_messages_for(:task).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description, class:"form-control" %><br>
+    <% @assignment.errors.full_messages_for(:description).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :epic %><br>
+    <%= form.text_field :epic, class:"form-control" %><br>
+    <% @assignment.errors.full_messages_for(:epic).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :due_date %><br>
+    <%= form.date_field :due_date, as: :datetime, class:"form-control" %><br>
+    <% @assignment.errors.full_messages_for(:due_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :task_owner %><br>
+    <%= form.text_field :task_owner, class:"form-control" %><br>
+    <% @assignment.errors.full_messages_for(:task_owner).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :assignee %><br>
+    <%= form.text_field :assignee, class:"form-control" %><br>
+    <% @assignment.errors.full_messages_for(:assignee).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :status %>
+    <%= form.select :status, ['Open','Closed', 'In Progress', 'Done'],{ selected: 'Open' }, { :class => 'form-select' } %>
+  </div>
+
+  <div>
+    <%= form.submit class:"btn btn-primary mt-3" %>
+  </div>
+<% end %>

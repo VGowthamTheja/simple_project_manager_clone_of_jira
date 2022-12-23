@@ -1,0 +1,20 @@
+<% @assignments.each do |assignment| %>
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex align-items-center justify-content-between">
+        <b> <%= assignment.task %> &rarr; <%= Project.find(assignment.project_id).title %> </b>
+      </div>
+      <div class="card mt-2">
+        <div class="card card-body">
+          <p><%= assignment.description %></p>
+          <p><b>Status: </b><span class="badge rounded-pill text-bg-primary"><%= assignment.status %></span></p>
+          <p> <b>Estimated Time:</b> <%= assignment.due_date.to_fs(:long_ordinal) %> </p>
+          <p><b>Story Owner: </b> <%= assignment.task_owner %> </p>
+          <p><b>Reporting To:</b> <%= assignment.assignee %> </p>
+          <p> <b>Created: </b> <%= assignment.created_at.to_fs(:long_ordinal) %> </p>
+          <p><b>Updated: </b><%= assignment.updated_at.to_fs(:long_ordinal) %> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

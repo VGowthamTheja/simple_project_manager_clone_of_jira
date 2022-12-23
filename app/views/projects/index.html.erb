@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="d-flex align-items-center justify-content-between" >
+    <h1>Projects</h1>
+    <%= link_to "New Project", new_project_path, class:"btn btn-primary" %>
+  </div>
+  <hr/>
+  <% if @projects.any?%>
+    <% @projects.to_a.each do |project| %>
+      <div class="card mt-3">
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between" >
+            <div class="d-flex align-items-baseline">
+              <h5><%= project.title %></h5>
+              <span class="badge rounded-pill text-bg-primary mx-3"><%= project.status %></span>
+            </div>
+            <%= link_to "Show", project_path(project), class:"btn btn-secondary" %>
+          </div>
+          <hr/>
+          <p> <%= project.description %> </p>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <h4>There are no ongoing projects to display.</h4>
+  <% end %>
+</div>

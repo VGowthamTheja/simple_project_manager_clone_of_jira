@@ -1,3 +1,24 @@
-# simple_project_manager_clone_of_jira
-This project is a ruby on rails clone version of the project management app i.e,jira. It is only for educational purposes. It doesn't involve any jira implementations except conceptual resemblance.
+# README
 
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...

@@ -1,0 +1,34 @@
+<%= form_with model: project do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, class:"form-control" %>
+    <% @project.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description, class:"form-control" %><br>
+    <% @project.errors.full_messages_for(:description).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :team_lead %><br>
+    <%= form.text_field :team_lead, class:"form-control" %><br>
+    <% @project.errors.full_messages_for(:team_lead).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :status %>
+    <%= form.select :status, ['Open','Closed', 'In Progress', 'Done'],{ selected: 'Open' }, { :class => 'form-select' } %>
+  </div>
+
+  <div>
+    <%= form.submit class:"btn btn-primary mt-3" %>
+  </div>
+<% end %>

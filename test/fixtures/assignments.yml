@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task: MyString
+  description: MyString
+  epic: MyString
+  due_date: 2022-12-21 22:32:52
+  assgined_to: MyString
+  assignee: MyString
+  status: MyString
+
+two:
+  task: MyString
+  description: MyString
+  epic: MyString
+  due_date: 2022-12-21 22:32:52
+  assgined_to: MyString
+  assignee: MyString
+  status: MyString
